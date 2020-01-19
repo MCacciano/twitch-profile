@@ -7,7 +7,7 @@ export const NavWrapper = styled.div`
   height: 64px;
   line-height: 64px;
 
-  /* background: #4f5d75; */
+  background: #080b0d;
 `;
 
 // overall link styles
@@ -18,9 +18,20 @@ const NavbarLink = styled(Link)`
   height: 100%;
 `;
 
-export const NavLogo = styled(NavbarLink)`
-  font-size: 1.5rem;
+export const NavLogoContainer = styled(NavbarLink)`
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+
   padding-left: 2rem;
+  font-weight: 700;
+  font-size: 1.5em;
+`;
+
+export const NavLogoImg = styled.img`
+  width: 100%;
+  height: auto;
+  padding-top: 10px;
 `;
 
 export const NavList = styled.ul`

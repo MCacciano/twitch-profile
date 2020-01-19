@@ -1,17 +1,40 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-import { HeaderWrapper, HeroImgWrapper, HeroImg } from './home.styles';
+// redux
+import { connect } from 'react-redux';
+import { getUser } from '../../redux/twitch/twitch.actions';
 
-const HomePage = () => {
+// styled-components
+import { HeaderWrapper, H1 } from './home.styles';
+
+const HomePage = ({ getUser, user }) => {
+  useEffect(() => {
+    getUser({ name: 'k00ka' });
+  }, []);
+
+  if (!user) return <p>Loading...</p>;
+
   return (
     <header>
-      <HeaderWrapper>
-        <HeroImgWrapper>
-          <HeroImg src='/images/hero-1.jpg' />
-        </HeroImgWrapper>
+      <HeaderWrapper url='/images/hero-1.png'>
+        <H1></H1>
       </HeaderWrapper>
     </header>
   );
 };
 
-export default HomePage;
+HomePage.propTypes = {
+  user: PropTypes.object,
+  getUser: PropTypes.func.isRequired
+};
+
+const mapStateToProps = ({ user }) => ({
+  user: user.user
+});
+
+const mapDispatchToProps = dispatch => ({
+  getUser: name => dispatch(getUser(name))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

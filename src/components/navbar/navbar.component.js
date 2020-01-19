@@ -1,14 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import { NavWrapper, NavLogo, NavList, NavListItem, NavListLink } from './navbar.styles';
+// redux
+import { connect } from 'react-redux';
 
-const Navbar = () => {
+import { NavWrapper, NavLogoContainer, NavList, NavListItem, NavListLink, NavLogoImg } from './navbar.styles';
+
+const Navbar = ({ user }) => {
   return (
     <nav>
       <NavWrapper>
-        <NavLogo to='/' className='brand-logo'>
-          Logo
-        </NavLogo>
+        <NavLogoContainer to='/' className='brand-logo'>
+          <NavLogoImg src='/images/warrior-job-icon.png' />
+          <h3>{user.display_name}</h3>
+        </NavLogoContainer>
         <NavList>
           <NavListItem>
             <NavListLink to='/'>Home</NavListLink>
@@ -22,4 +27,12 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+Navbar.propTypes = {
+  user: PropTypes.object
+};
+
+const mapStateToProps = ({ user }) => ({
+  user: user.user
+});
+
+export default connect(mapStateToProps, null)(Navbar);
