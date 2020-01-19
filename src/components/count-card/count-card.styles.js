@@ -13,6 +13,8 @@ export const LI = styled.li`
   border-radius: 10px;
   position: relative;
   color: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgba(16, 23, 28, 0.7);
 
   &:after {
     content: '';
@@ -28,12 +30,12 @@ export const LI = styled.li`
   }
 
   h3 {
-    font-size: 1.5rem;
-    align-self: flex-end;
+    margin: auto;
+    font-size: 1.75rem;
   }
 
   p {
-    font-size: 1.2rem;
-    align-self: flex-start;
+    margin: auto;
+    font-size: 1.5rem;
   }
 `;
