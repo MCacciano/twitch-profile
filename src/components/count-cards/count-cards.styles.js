@@ -6,7 +6,8 @@ export const CardContainer = styled.ul`
   grid-gap: 1rem;
   justify-content: space-between;
 
-  width: 70vw;
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
   list-style: none;
 `;
