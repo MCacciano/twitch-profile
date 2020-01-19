@@ -4,7 +4,15 @@ import PropTypes from 'prop-types';
 // redux
 import { connect } from 'react-redux';
 
-import { NavWrapper, NavLogoContainer, NavList, NavListItem, NavListLink, NavLogoImg } from './navbar.styles';
+import {
+  NavWrapper,
+  NavLogoContainer,
+  NavList,
+  NavListItem,
+  NavListLink,
+  NavLogoImg,
+  LogoStreamerName
+} from './navbar.styles';
 
 const Navbar = ({ user }) => {
   return (
@@ -12,7 +20,7 @@ const Navbar = ({ user }) => {
       <NavWrapper>
         <NavLogoContainer to='/' className='brand-logo'>
           <NavLogoImg src='/images/warrior-job-icon.png' />
-          <h3>{user.display_name}</h3>
+          <LogoStreamerName>{user.display_name}</LogoStreamerName>
         </NavLogoContainer>
         <NavList>
           <NavListItem>

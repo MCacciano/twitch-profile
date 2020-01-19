@@ -7,7 +7,7 @@ export const NavWrapper = styled.div`
   height: 64px;
   line-height: 64px;
 
-  background: #080b0d;
+  background: #10171c;
 `;
 
 // overall link styles
@@ -31,7 +31,10 @@ export const NavLogoContainer = styled(NavbarLink)`
 export const NavLogoImg = styled.img`
   width: 100%;
   height: auto;
-  padding-top: 10px;
+`;
+
+export const LogoStreamerName = styled.h4`
+  padding-bottom: 10px;
 `;
 
 export const NavList = styled.ul`

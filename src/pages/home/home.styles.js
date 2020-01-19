@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 
-export const HeaderWrapper = styled.div`
+export const Header = styled.header`
   display: grid;
+  grid-template-rows: 62.5vh 125px;
+`;
 
+export const HeroImg = styled.div`
   position: relative;
   background: ${props => (props.url ? 'url(' + props.url + ')' : '')};
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
-  height: 50vh;
+  height: 70vh;
   z-index: -2;
 
   &:after {

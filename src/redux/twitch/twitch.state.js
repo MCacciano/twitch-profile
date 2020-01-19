@@ -1,3 +1,6 @@
 export default {
-  user: {}
+  user: {},
+  follows: {},
+  videos: {},
+  clips: {}
 };
